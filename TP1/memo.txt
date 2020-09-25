@@ -1,0 +1,4 @@
+﻿2 ** 4 = 16
+blabla = 'blablablablabla'
+blabla[:3]='bla'
+https://docs.python.org/3/tutorial/introduction.html
