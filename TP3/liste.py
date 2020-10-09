@@ -117,7 +117,21 @@ def trifusion(cmp,l):
         return l
     else : return fusion(cmp,trifusion(cmp,moitie(l)),trifusion(cmp,moitie(tl(l))))
 
-l=lalea(20,None)
-lt=trifusion((lambda a,b : a-b),l)
-print(lt)
-print(checkSort((lambda a,b : a-b),lt))
+#l=lalea(20,None)
+#lt=trifusion((lambda a,b : a-b),l)
+#print(lt)
+#print(checkSort((lambda a,b : a-b),lt))
+
+def chif(b,n,l):
+    if 0==n :
+        return l
+    else : return chif(b,n//b,cons(n%b,l))
+
+def bld(b,l,n):
+    if None==l :
+        return n
+    else :
+        return bld(b,tl(l),n*b+hd(l))
+
+l=chif(10,123456,None)
+print(bld(10,l,0))
