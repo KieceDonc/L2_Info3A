@@ -143,7 +143,11 @@ def draw():
   # width par width:
   img=Image.new("RGB", (width,width), (255,255,255))
   c = ImageDraw.Draw(img) 
-  edge(c)
+  for x in range(len(table)):
+      currentEl = table[x] 
+      currentYear = currentEl[0]
+      currentMonth = currentEl[1]
+      currentDeath = currentEl[2]
   # c pour canvas
   # après avoir tracé dans le canevas:
   img.show() 
