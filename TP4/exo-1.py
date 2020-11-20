@@ -5,17 +5,17 @@ sommets=[0, 1, 2, 3, 4, 5]
 source=0
 terminal=5
 """
-arcs=[
-(0, 1, 4), (0, 2, 6),(0, 4, 2),  
-(1, 3, 6), (1, 4, 4), (1, 5, 12),
-(2, 4, 5), (2, 6, 13), 
-(3, 5, 7), 
-(4, 5, 8), (4, 7, 20), (4, 6, 10),
-(5, 7, 0), 
-(6, 7, 5) ]
-sommets=[0, 1, 2, 3, 4, 5, 6, 7]
+sommets = [0,1,2,3,4,5,6]
+Arcs = [(0,1,10),(0,2,1),(0,3,5),
+        (1,3,1),(1,4,20),
+        (2,3,2),(3,5,3),
+        (3,4,4),(3,6,2),(3,6,8),
+        (4,6,15),
+        (5,6,10)
+        ]
+sommets=[0, 1, 2, 3, 4, 5, 6]
 source=0
-terminal=7
+terminal=6
 tots={}
 tots[ source ]=0
 def auplustot( s ) :
@@ -30,9 +30,9 @@ def auplustot( s ) :
         x = max( x, auplustot(a) + ab)
         tots[s]= x
     return tots[s]
-auplustot( terminal)
+auplustot(terminal)
 print('tots='),
-print( tots)
+print(tots)
 # tots= {0: 0, 1: 100, 2: 200, 3: 270, 4: 280, 5: 300}
 tards={}
 tards[terminal]= auplustot( terminal)
